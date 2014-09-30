@@ -34,7 +34,7 @@ Should you choose to accept this mission:
 
 1. Fork this repo
 1. Write the module in index.js
-1. Test the module by running npm test
+1. Test the module by running `npm test`
 1. Submit a PR! (Github will check whether your PR passes all the tests)
 1. [Apply](http://newrelic.com/about/careers?jvi=oIFeZfwk,Job) for the job on the New Relic Node.js agent team!
 
