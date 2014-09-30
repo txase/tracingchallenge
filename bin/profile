@@ -1,0 +1,23 @@
+#!/bin/bash
+
+profilerScriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+
+nodeArgs=""
+script=""
+while (( "$#" )); do
+  arg=$1
+  if [ ${arg:0:1} = "-" ]; then
+    nodeArgs="$nodeArgs $arg"
+    shift
+  else
+    if [ ${arg:0:1} = "/" ]; then
+      script=$arg
+    else
+      script=./$arg
+    fi
+    shift
+    break
+  fi
+done
+
+node $nodeArgs -e "require('$profilerScriptDir/index.js'); require('module').runMain()" "$script" "$@"
